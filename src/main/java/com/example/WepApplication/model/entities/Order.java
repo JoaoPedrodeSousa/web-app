@@ -2,14 +2,12 @@ package com.example.WepApplication.model.entities;
 
 import com.example.WepApplication.model.OrderStatus;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+@Table(name="tb_order")
 public class Order implements Serializable {
 
     private static final Long serialVersionUID = 1L;

@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/usuario")
+@RequestMapping(value = "/user")
 public class UserResource {
     @GetMapping
     public ResponseEntity<User> find() {
-        User user = new User(10L, "Jose luis", "luidrocha@gmail.com", "21-99254-2563", "Brasil2020");
+        User user = new User(null, "Jose luis", "luidrocha@gmail.com", "21-99254-2563", "Brasil2020");
         return ResponseEntity.ok().body(user);
     }
 }
