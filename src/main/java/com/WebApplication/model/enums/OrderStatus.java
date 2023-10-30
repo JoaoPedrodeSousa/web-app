@@ -1,6 +1,4 @@
-package com.example.WepApplication.model.enums;
-
-import com.example.WepApplication.model.entities.Order;
+package com.WebApplication.model.enums;
 
 public enum OrderStatus {
 

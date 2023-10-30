@@ -1,9 +1,7 @@
-package com.example.WepApplication.model.resources;
+package com.WebApplication.model.resources;
 
-import com.example.WepApplication.model.entities.Category;
-import com.example.WepApplication.model.entities.Product;
-import com.example.WepApplication.model.services.CategoryService;
-import com.example.WepApplication.model.services.ProductService;
+import com.WebApplication.model.entities.Product;
+import com.WebApplication.model.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,9 +1,6 @@
-package com.example.WepApplication.model.services;
+package com.WebApplication.model.services;
 
-import com.example.WepApplication.model.entities.Order;
-import com.example.WepApplication.model.entities.User;
-import com.example.WepApplication.model.repositories.OrderRepository;
-import com.example.WepApplication.model.repositories.UserRepository;
+import com.WebApplication.model.entities.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +10,7 @@ import java.util.Optional;
 @Service
 public class OrderService {
     @Autowired
-    private OrderRepository OrderRepository;
+    private com.WebApplication.model.repositories.OrderRepository OrderRepository;
 
     public List<Order> findAll(){
         return OrderRepository.findAll();

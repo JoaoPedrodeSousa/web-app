@@ -1,7 +1,7 @@
-package com.example.WepApplication.model.resources;
+package com.WebApplication.model.resources;
 
-import com.example.WepApplication.model.entities.Order;
-import com.example.WepApplication.model.services.OrderService;
+import com.WebApplication.model.entities.Order;
+import com.WebApplication.model.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

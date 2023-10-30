@@ -1,7 +1,7 @@
-package com.example.WepApplication.model.services;
+package com.WebApplication.model.services;
 
-import com.example.WepApplication.model.entities.User;
-import com.example.WepApplication.model.repositories.UserRepository;
+import com.WebApplication.model.entities.User;
+import com.WebApplication.model.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

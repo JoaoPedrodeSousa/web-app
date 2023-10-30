@@ -1,6 +1,4 @@
-package com.example.WepApplication.model.entities;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.WebApplication.model.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
