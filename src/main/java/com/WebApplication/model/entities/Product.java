@@ -1,5 +1,7 @@
 package com.WebApplication.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,6 +18,8 @@ public class Product implements Serializable {
     private String description;
     private Double price;
     private String imgUrl;
+    @OneToMany( mappedBy = "id.product")
+    private Set<OrderItem> items = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "tb_product_category",
@@ -76,5 +80,14 @@ public class Product implements Serializable {
 
     public Set<Category> getCategories() {
         return categories;
+    }
+    @JsonIgnore
+    public Set<Order> gerOrders(){
+        Set<Order> set = new HashSet<>();
+
+        for(OrderItem x : items){
+            set.add(x.getOrder());
+        }
+        return set;
     }
 }
