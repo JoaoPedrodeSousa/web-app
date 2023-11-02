@@ -1,5 +1,7 @@
 package com.WebApplication.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -12,11 +14,14 @@ public class Payment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Instant instant;
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
 
-    public Payment(){}
+    public Payment(){
+
+    }
     public Payment(Long id, Instant instant, Order order) {
         this.id = id;
         this.instant = instant;
