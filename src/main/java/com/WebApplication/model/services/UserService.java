@@ -2,10 +2,14 @@ package com.WebApplication.model.services;
 
 import com.WebApplication.model.entities.User;
 import com.WebApplication.model.repositories.UserRepository;
+import com.WebApplication.model.services.exceptions.DatabaseException;
 import com.WebApplication.model.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,12 +32,27 @@ public class UserService {
     }
 
     public void delete(Long id){
-        userRepository.deleteById(id);
+        try {
+            userRepository.deleteById(id);
+        }
+
+        catch (EmptyResultDataAccessException e){
+            throw new ResourceNotFoundException(id);
+        }
+
+        catch (DataIntegrityViolationException e){
+            throw new DatabaseException(e.getMessage());
+        }
     }
     public User update(Long id, User user){
-        User entity = userRepository.getReferenceById(id);
-        updateData(entity, user);
-        return userRepository.save(entity);
+        try {
+            User entity = userRepository.getReferenceById(id);
+            updateData(entity, user);
+            return userRepository.save(entity);
+        }
+        catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException(e.getMessage());
+        }
     }
 
     private void updateData(User entity, User user){
