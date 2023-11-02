@@ -1,9 +1,6 @@
 package com.WebApplication.model.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -11,6 +8,8 @@ import java.time.Instant;
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Instant instant;
     @OneToOne
